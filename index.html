@@ -4,38 +4,134 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <title>TARAB AI - Musical Mastery</title>
-    <meta name="description" content="AI Meets Musical Mastery" />
+    <title>Tarab — an applied mathematics lab</title>
+    <meta name="description" content="Tarab is an applied mathematics lab. Current work: Arabic maqam theory in linear algebra." />
 
-    <!-- Pico.css -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2.0.6/css/pico.classless.min.css"
+      href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;1,400&family=Amiri&display=swap"
     />
+
+    <style>
+      :root {
+        --ink: #000;
+        --paper: #fff;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --ink: #fff;
+          --paper: #000;
+        }
+      }
+
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { font-size: 100%; }
+
+      body {
+        background: var(--paper);
+        color: var(--ink);
+        font-family: "STIX Two Text", "Times New Roman", serif;
+        font-size: 1.125rem;
+        line-height: 1.65;
+        display: flex;
+        flex-direction: column;
+        min-height: 100svh;
+      }
+
+      ::selection { background: var(--ink); color: var(--paper); }
+
+      main {
+        flex: 1;
+        width: 100%;
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 18vh 1.5rem 4rem;
+      }
+
+      .wordmark {
+        font-weight: 600;
+        font-size: 2rem;
+        letter-spacing: 0.01em;
+      }
+      .wordmark .ar {
+        font-family: "Amiri", serif;
+        font-weight: 400;
+        margin-inline-start: 0.5rem;
+      }
+
+      .tagline {
+        margin-top: 0.25rem;
+        font-style: italic;
+      }
+
+      hr {
+        border: 0;
+        border-top: 1px solid var(--ink);
+        margin: 3rem 0;
+        width: 3rem;
+      }
+
+      .work p + p { margin-top: 1rem; }
+
+      .math {
+        display: block;
+        margin: 2.5rem 0;
+        font-size: 1.75rem;
+        font-style: italic;
+      }
+      .math .set { font-style: normal; }
+
+      a {
+        color: var(--ink);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+      a:focus-visible {
+        outline: 2px solid var(--ink);
+        outline-offset: 3px;
+      }
+
+      .contact { margin-top: 3rem; }
+
+      footer {
+        max-width: 36rem;
+        margin: 0 auto;
+        width: 100%;
+        padding: 1.5rem;
+        font-size: 0.875rem;
+      }
+    </style>
   </head>
 
   <body>
-    <!-- Header -->
-    <header>
-      <hgroup>
-        <img src="assets/images/logo.png" alt="TARAB AI logo" width="480px" />
-        <p></p>
-      </hgroup>
-    </header>
-
     <main>
-      <section id="preview">
-        <h2>Elevate Your Music Studies with Next-Gen AI Coaching</h2>
-        <p>Take your existing lessons to new heights with a revolutionary blend of training and technology.</p>
-        <p>Stay in the loop and be the first to know when we launch.</p>
-        <p><a href="mailto:join@tarab.ai">Join Our Waitlist</a></p>
-      </section>
+      <h1 class="wordmark">Tarab<span class="ar" lang="ar">طرب</span></h1>
+      <p class="tagline">An applied mathematics lab.</p>
+
+      <hr />
+
+      <div class="work">
+        <p>
+          We take structures from the musical tradition of the Arab world and
+          treat them as mathematical objects.
+        </p>
+        <span class="math" aria-label="a jins is an interval vector over the integers mod 24">
+          jins&nbsp;=&nbsp;(a<sub>1</sub>,&nbsp;…,&nbsp;a<sub>n</sub>)&nbsp;∈&nbsp;<span class="set">(ℤ/24ℤ)<sup>n</sup></span>
+        </span>
+        <p>
+          Current work: maqam theory in linear algebra — the jins as an
+          interval vector over the quarter-tone lattice.
+        </p>
+      </div>
+
+      <p class="contact"><a href="mailto:join@tarab.ai">join@tarab.ai</a></p>
     </main>
-    <!-- Footer -->
+
     <footer>
-      <small>© 2024 tarab.ai - UAE</small
-      >
+      <small>© 2026 tarab.ai — UAE</small>
     </footer>
-    <!-- ./ Footer -->
   </body>
 </html>
