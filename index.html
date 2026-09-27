@@ -103,6 +103,63 @@
         padding: 1.5rem;
         font-size: 0.875rem;
       }
+
+      /* Portrait */
+      .portrait { margin: 0; }
+      .portrait img {
+        display: block;
+        width: 100%;
+        height: auto;
+        filter: grayscale(1);
+      }
+      .portrait figcaption {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+        font-style: italic;
+      }
+      /* Narrow: portrait sits in the text column, after the text */
+      @media (max-width: 63.999rem) {
+        .portrait {
+          width: 100%;
+          max-width: 36rem;
+          margin: 0 auto;
+          padding: 0 1.5rem 2rem;
+        }
+        .portrait img { max-width: 22rem; }
+        .portrait figcaption { padding-inline: 0; }
+      }
+      /* Wide: text left, full-height portrait right */
+      @media (min-width: 64rem) {
+        body {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) minmax(24rem, 42vw);
+          grid-template-rows: 1fr auto;
+        }
+        main { grid-column: 1; grid-row: 1; padding-inline: 3rem; }
+        footer { grid-column: 1; grid-row: 2; padding-inline: 3rem; }
+        .portrait {
+          grid-column: 2;
+          grid-row: 1 / span 2;
+          position: sticky;
+          top: 0;
+          height: 100svh;
+          display: flex;
+          flex-direction: column;
+        }
+        .portrait .frame {
+          flex: 1;
+          position: relative;
+          overflow: hidden;
+        }
+        .portrait img {
+          position: absolute;
+          inset: -1.5%;
+          width: 103%;
+          height: 103%;
+          object-fit: cover;
+          object-position: 50% 15%;
+        }
+      }
     </style>
   </head>
 
@@ -129,6 +186,20 @@
 
       <p class="contact"><a href="mailto:join@tarab.ai">join@tarab.ai</a></p>
     </main>
+
+    <figure class="portrait">
+      <div class="frame">
+        <img
+          src="assets/images/zayed.webp"
+          width="777"
+          height="1200"
+          alt="Sheikh Zayed standing barefoot in the desert, black-and-white photograph"
+          fetchpriority="high"
+          decoding="async"
+        />
+      </div>
+      <!-- <figcaption>Sheikh Zayed</figcaption> -->
+    </figure>
 
     <footer>
       <small>© 2026 tarab.ai — UAE</small>
