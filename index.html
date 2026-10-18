@@ -86,12 +86,20 @@
 
       a {
         color: var(--ink);
-        text-decoration: underline;
         text-underline-offset: 3px;
       }
       a:focus-visible {
         outline: 2px solid var(--ink);
         outline-offset: 3px;
+      }
+
+      a.highlight {
+        text-decoration: none;
+      }
+
+      a.highlight:hover {
+        background-color: darkgray;
+        color: ivory;
       }
 
       .contact { margin-top: 3rem; }
@@ -185,6 +193,9 @@
       </div>
 
       <p class="contact"><a href="mailto:join@tarab.ai">join@tarab.ai</a></p>
+      <hr />
+      <p><a class="highlight" href="https://x.tarab.ai" lang="ar" dir="rtl" style="font-family: 'Amiri', serif">أعلام الطرب — الخطوط الزمنية</a></p>
+      <p><a class="highlight" href="https://www.youtube.com/@AbuDhabiTarabMusic/playlists" lang="ar" dir="rtl" style="font-family: 'Amiri', serif">Our Youtube Channel</a></p>
     </main>
 
     <figure class="portrait">
